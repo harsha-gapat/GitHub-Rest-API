@@ -69,10 +69,8 @@ public class MySqlFactory extends AbstractSdkConnectorFactory implements IConnec
         }
 
         return connection;
-    }
-
-
-}
+   }
+   }
 
 
 
