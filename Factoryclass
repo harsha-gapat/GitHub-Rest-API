@@ -1,0 +1,79 @@
+
+package com.gra.connector.mysql;
+
+import com.gra.connector.AbstractSdkConnectorFactory;
+import com.gra.connector.ConnectException;
+import com.gra.connector.IActivityConnector;
+import com.gra.connector.IConnectorFactory;
+import org.apache.log4j.Logger;
+
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Properties;
+
+public class MySqlFactory extends AbstractSdkConnectorFactory implements IConnectorFactory {
+    public static final Logger log = Logger.getLogger(MySqlFactory.class.getName());
+    private Properties properties = null;
+
+
+    public MySqlFactory() {
+        URL in3 = getClass().getResource("/mysql_factorydescriptor.json");
+        super.setFactoryJsonFilePathURL(in3);
+    }
+
+    @Override
+    public void init(Properties properties) throws ConnectException {
+        this.properties = properties;
+    }
+
+    @Override
+    public Properties getProperties() throws ConnectException {
+        return properties;
+    }
+
+    @Override
+    public IActivityConnector createActivityConnector() throws ConnectException {
+        IActivityConnector obj = null;
+        try {
+            obj = new MySqlConnector();
+        } catch (Exception e) {
+            log.error("Error in Creating Activity Connector..:", e);
+        }
+        return obj;
+    }
+
+    @Override
+    public boolean testConnection() {
+        boolean connection = false;
+        log.info("start Connection Testing");
+
+        String Url = (String) this.properties.get("JDBC_URL");
+        log.info(Url);
+        String Username = (String) this.properties.get("USERNAME");
+        String Password = (String) this.properties.get("PASSWORD");
+        String driver = (String) this.properties.get("JDBC_DRIVER");
+
+        try {
+            Class.forName(driver);
+            Connection con = DriverManager.getConnection(Url, Username, Password);
+            if (con != null) {
+                log.info("Test Connection Successfully");
+                connection = true;
+            }
+        } catch (Exception ex) {
+            log.info("Not Successfully");
+            log.error(ex.getMessage());
+            connection=false;
+
+        }
+
+        return connection;
+    }
+
+
+}
+
+
+
+
