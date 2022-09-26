@@ -217,51 +217,7 @@
         }
     },
     
-    {
-        "org": "harsha-gapat",
-        "repo": "harsha-gapat/GitHub-Rest-API",
-        "created_at": 1663152057488,
-        "actor": "sourabhkaleGC",
-        "public_repo": true,
-        "operation_type": "modify",
-        "action": "repo.set_actions_fork_pr_approvals_policy",
-        "visibility": "public",
-        "@timestamp": 1663152057488,
-        "_document_id": "Mr1ztUYHIAOlNiKGz6Dw9g",
-        "actor_location": {
-            "country_code": "IN"
-        }
-    },
-    {
-        "org": "harsha-gapat",
-        "repo": "harsha-gapat/GitHub-Rest-API",
-        "created_at": 1663152023963,
-        "actor": "sourabhkaleGC",
-        "public_repo": true,
-        "operation_type": "modify",
-        "action": "repo.update_actions_settings",
-        "visibility": "public",
-        "@timestamp": 1663152023963,
-        "_document_id": "nXYz4hM-1YMB1X7GMxGqhw",
-        "actor_location": {
-            "country_code": "IN"
-        }
-    },
-    {
-        "org": "harsha-gapat",
-        "repo": "harsha-gapat/GitHub-Rest-API",
-        "created_at": 1663152023889,
-        "actor": "sourabhkaleGC",
-        "public_repo": true,
-        "operation_type": "modify",
-        "action": "repo.update_actions_settings",
-        "visibility": "public",
-        "@timestamp": 1663152023889,
-        "_document_id": "BxyRiYg-Maf6TQB90aQWQA",
-        "actor_location": {
-            "country_code": "IN"
-        }
-    },
-    
+   
+   
 ]
 *********************************
