@@ -17,7 +17,12 @@ public class Arguments {
 
 			System.out.println(reportDate);
 			************************************
-			----------------------------------
+			
+			
+			
+			
+			
+			GitHub Connector
 		
 		
 		
